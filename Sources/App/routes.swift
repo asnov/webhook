@@ -16,14 +16,18 @@ func routes(_ app: Application) throws {
 //        task.launchPath = "/usr/bin/env"
 //        task.arguments = ["pwd"]
 
-        task.launchPath = "/bin/sh"
+        task.executableURL = .init(filePath: "/bin/sh")
 //        task.arguments = ["-c", "help"]
         task.arguments = ["-c", "pwd"]
 //        task.arguments = ["-c", "ls", "-al"]
 
         task.standardOutput = pipe
         task.standardError = pipe
-        task.launch()
+        do {
+            try task.run()
+        } catch {
+            print("ERROR:", error)
+        }
         task.waitUntilExit()
         
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
