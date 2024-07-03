@@ -16,7 +16,7 @@ func routes(_ app: Application) throws {
 //        task.launchPath = "/usr/bin/env"
 //        task.arguments = ["pwd"]
 
-        task.executableURL = .init(filePath: "/bin/sh")
+        task.executableURL = .init(fileURLWithPath: "/bin/sh")
 //        task.arguments = ["-c", "help"]
         task.arguments = ["-c", "pwd"]
 //        task.arguments = ["-c", "ls", "-al"]
