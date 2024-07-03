@@ -31,7 +31,7 @@ let package = Package(
             swiftSettings: swiftSettings
         )
     ],
-    swiftLanguageVersions: [.version("5.10")]
+    swiftLanguageVersions: [.version("5")]
 )
 
 var swiftSettings: [SwiftSetting] { [
