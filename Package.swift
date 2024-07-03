@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "test",
+    name: "webhook",
     platforms: [
        .macOS(.v13)
     ],
