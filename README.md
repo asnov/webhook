@@ -5,6 +5,11 @@
 swift run App serve --hostname localhost --port 8080
 ```
 
+##### How to build
+```bash
+swift build -c release
+```
+
 ##### How to test
 ```
 curl -X 'POST' 'http://localhost:8080/publish-complete' \

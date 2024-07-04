@@ -1,5 +1,11 @@
 import Vapor
 
+#if os(Linux)
+    import Glibc
+#else
+    import Darwin.C
+#endif
+
 func routes(_ app: Application) throws {
     app.get { req async in
         "It works!"
@@ -41,6 +47,7 @@ func routes(_ app: Application) throws {
             //TODO: how to set http error code?
         }
         print(body)
+        fflush(stdout)
 //        let pass = req.password.async
         return "Ok\n"
     }
@@ -51,6 +58,7 @@ func routes(_ app: Application) throws {
             //TODO: how to set http error code?
         }
         print(body)
+        fflush(stdout)
         return "Ok\n"
     }
 
